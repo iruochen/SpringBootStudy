@@ -1,6 +1,8 @@
 package com.ruochen.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,12 +22,19 @@ public class BookController {
     @Value("${likes[1]}")
     private String likes1;
 
+    // 将所有数据封装到一个对象中
+    @Autowired
+    private Environment environment;
+
     @GetMapping
     public String getById() {
         System.out.println("springboot is running ....");
         System.out.println("country => " + country1);
         System.out.println("name1 => " + name1);
         System.out.println("likes1 => " + likes1);
+        System.out.println("-----------------------");
+        System.out.println(environment.getProperty("server.port"));
+        System.out.println(environment.getProperty("country"));
         return "springboot is running ....";
     }
 }
