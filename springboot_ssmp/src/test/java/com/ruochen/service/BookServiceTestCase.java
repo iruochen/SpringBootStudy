@@ -1,7 +1,5 @@
 package com.ruochen.service;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ruochen.domain.Book;
@@ -13,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class BookServiceTestCase {
 
     @Autowired
-    private BookService bookService;
+    private IBookService bookService;
 
     @Test
     void testGetById() {
@@ -32,26 +30,27 @@ public class BookServiceTestCase {
     @Test
     void testUpdate() {
         Book book = new Book();
-        book.setId(14);
-        book.setType("测试数据aaa");
-        book.setName("测试数据aaa");
+        book.setId(15);
+        book.setType("测试数据bbb");
+        book.setName("测试数据bbb");
         book.setDescription("测试数据");
-        bookService.update(book);
+        bookService.updateById(book);
     }
 
     @Test
     void testDelete() {
-        bookService.delete(13);
+        bookService.removeById(14);
     }
 
     @Test
     void testGetAll() {
-        bookService.getAll();
+        bookService.list();
     }
 
     @Test
     void testGetPage() {
-        IPage<Book> page = bookService.getPage(2, 5);
+        IPage<Book> page = new Page<Book>(2, 5);
+        bookService.page(page);
         System.out.println(page.getRecords());
     }
 }
