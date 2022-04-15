@@ -25,9 +25,16 @@ class Springboot04IntegrationApplicationTests {
         bookDao.save();
     }
 
+    /*
     @Test
     void testAccountGetById() {
         System.out.println(accountDao.getById(2));
+    }
+    */
+
+    @Test
+    void testSelectById() {
+        System.out.println(accountDao.selectById(2));
     }
 
 }
