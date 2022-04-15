@@ -1,5 +1,6 @@
 package com.ruochen.controller;
 
+import com.ruochen.MyDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -26,6 +27,9 @@ public class BookController {
     @Autowired
     private Environment environment;
 
+    @Autowired
+    private MyDataSource myDataSource;
+
     @GetMapping
     public String getById() {
         System.out.println("springboot is running ....");
@@ -35,6 +39,8 @@ public class BookController {
         System.out.println("-----------------------");
         System.out.println(environment.getProperty("server.port"));
         System.out.println(environment.getProperty("country"));
+        System.out.println("-----------------------");
+        System.out.println(myDataSource);
         return "springboot is running ....";
     }
 }

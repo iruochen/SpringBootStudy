@@ -4,8 +4,13 @@ user:
   name: ruochen
   age: 22
 
-likes: [game, music, sleep]
+likes: [ game, music, sleep ]
 
+datasource:
+  driver: com.mysql.jdbc.Driver
+  url: jdbc:mysql///springboot_db
+  username: root
+  password: ruochen666
 
 server:
   port: 80
