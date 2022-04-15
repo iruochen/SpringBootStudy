@@ -1,0 +1,11 @@
+country: china
+
+user:
+  name: ruochen
+  age: 22
+
+likes: [game, music, sleep]
+
+
+server:
+  port: 80
