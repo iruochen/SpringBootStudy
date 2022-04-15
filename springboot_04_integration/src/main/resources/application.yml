@@ -1,0 +1,8 @@
+# 配置相关信息
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///ssm
+    username: root
+    password: ruochen666
+
