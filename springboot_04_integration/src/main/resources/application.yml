@@ -1,13 +1,18 @@
 # 配置相关信息
+#配置方法一：
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql:///ssm
+#    username: root
+#    password: ruochen666
+#    type: com.alibaba.druid.pool.DruidDataSource
+
+#druid 整合配置
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql:///ssm
-    username: root
-    password: ruochen666
-
-# 设置 Mp 相关配置
-#mybatis-plus:
-#  global-config:
-#    db-config:
-#      table-prefix:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql:///ssm
+      username: root
+      password: ruochen666
