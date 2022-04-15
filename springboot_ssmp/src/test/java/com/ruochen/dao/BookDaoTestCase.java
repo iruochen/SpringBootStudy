@@ -1,5 +1,7 @@
 package com.ruochen.dao;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ruochen.domain.Book;
@@ -55,6 +57,16 @@ public class BookDaoTestCase {
 
     @Test
     void testGetBy() {
+        QueryWrapper<Book> qw = new QueryWrapper<>();
+        qw.like("name", "Spring");
+        bookDao.selectList(qw);
+    }
 
+    @Test
+    void testGetBy2() {
+        String name = null;
+        LambdaQueryWrapper<Book> lqw = new LambdaQueryWrapper<Book>();
+        lqw.like(name != null, Book::getName, name);
+        bookDao.selectList(lqw);
     }
 }
