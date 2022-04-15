@@ -1,5 +1,7 @@
 package com.ruochen.dao;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ruochen.domain.Book;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +49,8 @@ public class BookDaoTestCase {
 
     @Test
     void testGetPage() {
-
+        IPage page = new Page(1, 5);
+        bookDao.selectPage(page, null);
     }
 
     @Test
