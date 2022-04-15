@@ -1,2 +1,19 @@
+# 端口配置
 server:
   port: 80
+
+# Druid 配置
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql:///ssm
+      username: root
+      password: ruochen666
+
+# mp 表前缀
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: tbl_
+      id-type: auto  # 数据库自增策略
