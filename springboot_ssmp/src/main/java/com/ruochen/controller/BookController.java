@@ -6,6 +6,8 @@ import com.ruochen.service.IBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping("/books")
 public class BookController {
@@ -20,7 +22,8 @@ public class BookController {
 
     @PostMapping
     public R save(@RequestBody Book book) {
-        return new R(bookService.save(book));
+        boolean flag = bookService.save(book);
+        return new R(flag, flag ? "添加成功^_^" : "添加失败-_-!");
     }
 
     @PutMapping
