@@ -1,12 +1,11 @@
 package com.ruochen.controller;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.ruochen.controller.utils.R;
 import com.ruochen.domain.Book;
 import com.ruochen.service.IBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.io.IOException;
 
 @RestController
 @RequestMapping("/books")
@@ -43,6 +42,11 @@ public class BookController {
 
     @GetMapping("{currentPage}/{pageSize}")
     public R getPage(@PathVariable int currentPage, @PathVariable int pageSize) {
-        return new R(true, bookService.getPage(currentPage, pageSize));
+        IPage<Book> page = bookService.getPage(currentPage, pageSize);
+        // 如果当前页码值大于了总页码值，那么重新执行查询操作，使用最大页码值作为当前页码值
+        if (currentPage > page.getPages()) {
+            page = bookService.getPage((int) page.getPages(), pageSize);
+        }
+        return new R(true, page);
     }
 }
