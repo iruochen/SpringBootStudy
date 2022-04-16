@@ -1,13 +1,10 @@
 package com.ruochen.controller;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.ruochen.controller.utils.R;
 import com.ruochen.domain.Book;
 import com.ruochen.service.IBookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/books")
