@@ -12,6 +12,12 @@ spring:
       # password: R1@2uoc*h@@e&n
       password: ruochen666
 
+  devtools:
+    restart:
+      # 自定义不参与热部署的文件或文件夹
+      exclude: static/**,public/**
+
+
 # mp 表前缀
 mybatis-plus:
   global-config:
