@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/springboot_02_base_configuration/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_04_integration/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_ssmp/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_config/pom.xml" />
       </list>
     </option>
   </component>

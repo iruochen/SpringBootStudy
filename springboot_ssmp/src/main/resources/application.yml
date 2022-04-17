@@ -1,15 +1,16 @@
 # 端口配置
 server:
-  port: 80
+  port: 8081
 
 # Druid 配置
 spring:
   datasource:
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql:///ssm
+      url: jdbc:mysql://127.0.0.1:3306/ssm?useSSL=false&characterEncoding=UTF-8
       username: root
-      password: ruochen666
+      password: R1@2uoc*h@@e&n
+      # password: ruochen666
 
 # mp 表前缀
 mybatis-plus:
