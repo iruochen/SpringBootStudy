@@ -23,4 +23,13 @@ logging:
     # %clr(){cyan}：指定颜色
     console: "%d %clr(%5p) --- [%16t] %clr(%-40.40c){cyan} : %m %n"
 
+  # 日志写入文件
+  file:
+    name: server.log
+  logback:
+    rollingpolicy:
+      max-file-size: 4KB
+      # server.2022-01-01.0.log
+      file-name-pattern: server.%d{yyyy-MM-dd}.%i.log
+
 
