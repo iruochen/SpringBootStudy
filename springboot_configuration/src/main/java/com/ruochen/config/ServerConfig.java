@@ -1,7 +1,6 @@
 package com.ruochen.config;
 
 import lombok.Data;
-import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.convert.DataSizeUnit;
 import org.springframework.boot.convert.DurationUnit;
@@ -24,8 +23,7 @@ public class ServerConfig {
 
     // 设置具体的规则
     @Max(value = 8888, message = "最大值不能超过8888")
-    // @Min(value = 202, message = "最小值不能低于202")
-    @NotEmpty
+    @Min(value = 202, message = "最小值不能低于202")
     private int port;
     // ms
     private long timeout;

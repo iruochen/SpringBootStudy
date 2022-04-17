@@ -6,11 +6,14 @@ servers:
   # IPADDRESS: 192.168.0.1
   # IP_ADDRESS: 192.168.0.1  # 常量
   # IP_ADD_R_E_S_S: 192.168.0.1
-  ipAddress: 192.168.0.1
-  port: 9999
+  # ipAddress: 192.168.0.1
+  port: 2345
   timeout: -1
   serverTimeOut: 3
   dataSize: 10
 
-datasource:
+dataSource:
   driverClassName: com.mysql.jdbc.Driver222
+  # 0127 -- 87(八进制)
+  # password: 0127
+  password: "0127"
