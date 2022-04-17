@@ -16,6 +16,8 @@ spring:
     restart:
       # 自定义不参与热部署的文件或文件夹
       exclude: static/**,public/**
+      # 关闭热部署功能
+      enabled: false
 
 
 # mp 表前缀
