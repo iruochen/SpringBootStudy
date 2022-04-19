@@ -18,3 +18,14 @@ mybatis-plus:
       id-type: auto  # 数据库自增策略
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# 随机值
+testcase:
+  book:
+    id: ${random.int}
+    id2: ${random.int(10)}
+    type: ${random.int(5,10)}
+    name: ${random.value}
+    uuid: ${random.uuid}
+    publishTime: ${random.long}
+
