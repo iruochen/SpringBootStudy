@@ -7,3 +7,8 @@
 ## 内置持久化解决方案
 - springboot 内置 JdbcTemplate 持久化解决方案
 - 使用 JdbcTemplate 需要导入 `spring-boot-starter-jdbc`
+
+## 内嵌数据库
+- H2
+- HSQL
+- Derby

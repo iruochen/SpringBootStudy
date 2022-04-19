@@ -17,14 +17,12 @@ import java.util.Map;
 @SpringBootTest
 class SpringbootSqlApplicationTests {
 
-    /*
     @Autowired
     private BookDao bookDao;
-    */
 
     @Test
     void test() {
-        // bookDao.selectById(1);
+        bookDao.selectById(1);
     }
 
     @Test
@@ -52,7 +50,7 @@ class SpringbootSqlApplicationTests {
 
     @Test
     void testJdbcTemplateSave(@Autowired JdbcTemplate jdbcTemplate) {
-        String sql = "insert into tbl_book values (null, 'spring', 'spring', 'spring')";
+        String sql = "insert into tbl_book values (3, 'spring3', 'spring3', 'spring3')";
         jdbcTemplate.update(sql);
     }
 }
