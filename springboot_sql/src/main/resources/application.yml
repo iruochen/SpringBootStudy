@@ -9,10 +9,10 @@ spring:
       maximum-pool-size: 50
 
 # mp 表前缀
-mybatis-plus:
-  global-config:
-    db-config:
-      table-prefix: tbl_
-      id-type: auto  # 数据库自增策略
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#mybatis-plus:
+#  global-config:
+#    db-config:
+#      table-prefix: tbl_
+#      id-type: auto  # 数据库自增策略
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
