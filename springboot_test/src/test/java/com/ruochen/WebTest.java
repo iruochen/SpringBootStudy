@@ -11,6 +11,7 @@ import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.ContentResultMatchers;
+import org.springframework.test.web.servlet.result.HeaderResultMatchers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.result.StatusResultMatchers;
 
@@ -70,5 +71,27 @@ public class WebTest {
         ResultMatcher result = content.json("");
         // 添加预期值到本次调用过程中进行匹配
         action.andExpect(result);
+    }
+
+    @Test
+    void testGetById(@Autowired MockMvc mvc) throws Exception {
+        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.get("/books");
+        ResultActions action = mvc.perform(builder);
+
+        // status
+        StatusResultMatchers status = MockMvcResultMatchers.status();
+        ResultMatcher ok = status.isOk();
+        action.andExpect(ok);
+
+        // contentType
+        HeaderResultMatchers header = MockMvcResultMatchers.header();
+        ResultMatcher contentType = header.string("Content-Type", "application/json");
+        action.andExpect(contentType);
+
+        // json
+        ContentResultMatchers content = MockMvcResultMatchers.content();
+        ResultMatcher result = content.json("");
+        action.andExpect(result);
+
     }
 }
