@@ -1,2 +1,20 @@
 #test:
 #  prop: testValue
+
+# Druid 配置
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/ssm?useSSL=false&characterEncoding=UTF-8
+      username: root
+      password: ruochen666
+
+# mp 表前缀
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: tbl_
+      id-type: auto  # 数据库自增策略
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
