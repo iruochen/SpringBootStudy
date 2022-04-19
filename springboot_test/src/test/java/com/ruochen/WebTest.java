@@ -58,4 +58,17 @@ public class WebTest {
         // 添加预期值到本次调用过程中进行匹配
         action.andExpect(result);
     }
+
+    @Test
+    void testJson(@Autowired MockMvc mvc) throws Exception {
+        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.get("/books");
+        ResultActions action = mvc.perform(builder);
+
+        // 设定预期值，与真实值进行比较，成功测试通过，失败测试失败
+        // 定义本次调用的预期值
+        ContentResultMatchers content = MockMvcResultMatchers.content();
+        ResultMatcher result = content.json("");
+        // 添加预期值到本次调用过程中进行匹配
+        action.andExpect(result);
+    }
 }
